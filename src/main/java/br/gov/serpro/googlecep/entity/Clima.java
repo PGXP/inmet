@@ -28,43 +28,77 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Table(catalog = "geo", schema = "public")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Clima.findAll", query = "SELECT c FROM Clima c"),
+    @NamedQuery(name = "Clima.findAll", query = "SELECT c FROM Clima c order by c.estacao"),
     @NamedQuery(name = "Clima.findById", query = "SELECT c FROM Clima c WHERE c.id = :id"),
     @NamedQuery(name = "Clima.findByEstacao", query = "SELECT c FROM Clima c WHERE c.estacao = :estacao"),
     @NamedQuery(name = "Clima.findByDia", query = "SELECT c FROM Clima c WHERE c.dia = :dia"),
     @NamedQuery(name = "Clima.findByHora", query = "SELECT c FROM Clima c WHERE c.hora = :hora"),
+    @NamedQuery(name = "Clima.findByPrecipitacao", query = "SELECT c FROM Clima c WHERE c.precipitacao = :precipitacao"),
     @NamedQuery(name = "Clima.findByTempbulboseco", query = "SELECT c FROM Clima c WHERE c.tempbulboseco = :tempbulboseco"),
     @NamedQuery(name = "Clima.findByTempbulboumido", query = "SELECT c FROM Clima c WHERE c.tempbulboumido = :tempbulboumido"),
+    @NamedQuery(name = "Clima.findByTempmaxima", query = "SELECT c FROM Clima c WHERE c.tempmaxima = :tempmaxima"),
+    @NamedQuery(name = "Clima.findByTempminima", query = "SELECT c FROM Clima c WHERE c.tempminima = :tempminima"),
     @NamedQuery(name = "Clima.findByUmidaderelativa", query = "SELECT c FROM Clima c WHERE c.umidaderelativa = :umidaderelativa"),
     @NamedQuery(name = "Clima.findByPressaoatmestacao", query = "SELECT c FROM Clima c WHERE c.pressaoatmestacao = :pressaoatmestacao"),
+    @NamedQuery(name = "Clima.findByPressaoatmmar", query = "SELECT c FROM Clima c WHERE c.pressaoatmmar = :pressaoatmmar"),
     @NamedQuery(name = "Clima.findByDirecaovento", query = "SELECT c FROM Clima c WHERE c.direcaovento = :direcaovento"),
-    @NamedQuery(name = "Clima.findByVelocidadeventonebulosidade", query = "SELECT c FROM Clima c WHERE c.velocidadeventonebulosidade = :velocidadeventonebulosidade")})
+    @NamedQuery(name = "Clima.findByVelocidadevento", query = "SELECT c FROM Clima c WHERE c.velocidadevento = :velocidadevento"),
+    @NamedQuery(name = "Clima.findByInsolacao", query = "SELECT c FROM Clima c WHERE c.insolacao = :insolacao"),
+    @NamedQuery(name = "Clima.findByNebulosidade", query = "SELECT c FROM Clima c WHERE c.nebulosidade = :nebulosidade"),
+    @NamedQuery(name = "Clima.findByEvaporacaopiche", query = "SELECT c FROM Clima c WHERE c.evaporacaopiche = :evaporacaopiche"),
+    @NamedQuery(name = "Clima.findByTempcompmedia", query = "SELECT c FROM Clima c WHERE c.tempcompmedia = :tempcompmedia"),
+    @NamedQuery(name = "Clima.findByUmidaderelativamedia", query = "SELECT c FROM Clima c WHERE c.umidaderelativamedia = :umidaderelativamedia"),
+    @NamedQuery(name = "Clima.findByVelocidadeventomedia", query = "SELECT c FROM Clima c WHERE c.velocidadeventomedia = :velocidadeventomedia")})
 public class Clima implements Serializable {
 
     private static final long serialVersionUID = 1L;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(nullable = false)
     private Integer id;
+
     private Integer estacao;
+
     @Temporal(TemporalType.DATE)
     private Date dia;
+
     @Column(length = 4)
     private String hora;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+
+    @Column(precision = 17, scale = 17)
+    private Double precipitacao;
     @Column(precision = 17, scale = 17)
     private Double tempbulboseco;
     @Column(precision = 17, scale = 17)
     private Double tempbulboumido;
     @Column(precision = 17, scale = 17)
+    private Double tempmaxima;
+    @Column(precision = 17, scale = 17)
+    private Double tempminima;
+    @Column(precision = 17, scale = 17)
     private Double umidaderelativa;
     @Column(precision = 17, scale = 17)
     private Double pressaoatmestacao;
     @Column(precision = 17, scale = 17)
+    private Double pressaoatmmar;
+    @Column(precision = 17, scale = 17)
     private Double direcaovento;
     @Column(precision = 17, scale = 17)
-    private Double velocidadeventonebulosidade;
+    private Double velocidadevento;
+    @Column(precision = 17, scale = 17)
+    private Double insolacao;
+    @Column(precision = 17, scale = 17)
+    private Double nebulosidade;
+    @Column(precision = 17, scale = 17)
+    private Double evaporacaopiche;
+    @Column(precision = 17, scale = 17)
+    private Double tempcompmedia;
+    @Column(precision = 17, scale = 17)
+    private Double umidaderelativamedia;
+    @Column(precision = 17, scale = 17)
+    private Double velocidadeventomedia;
 
     public Clima() {
     }
@@ -105,6 +139,14 @@ public class Clima implements Serializable {
         this.hora = hora;
     }
 
+    public Double getPrecipitacao() {
+        return precipitacao;
+    }
+
+    public void setPrecipitacao(Double precipitacao) {
+        this.precipitacao = precipitacao;
+    }
+
     public Double getTempbulboseco() {
         return tempbulboseco;
     }
@@ -119,6 +161,22 @@ public class Clima implements Serializable {
 
     public void setTempbulboumido(Double tempbulboumido) {
         this.tempbulboumido = tempbulboumido;
+    }
+
+    public Double getTempmaxima() {
+        return tempmaxima;
+    }
+
+    public void setTempmaxima(Double tempmaxima) {
+        this.tempmaxima = tempmaxima;
+    }
+
+    public Double getTempminima() {
+        return tempminima;
+    }
+
+    public void setTempminima(Double tempminima) {
+        this.tempminima = tempminima;
     }
 
     public Double getUmidaderelativa() {
@@ -137,6 +195,14 @@ public class Clima implements Serializable {
         this.pressaoatmestacao = pressaoatmestacao;
     }
 
+    public Double getPressaoatmmar() {
+        return pressaoatmmar;
+    }
+
+    public void setPressaoatmmar(Double pressaoatmmar) {
+        this.pressaoatmmar = pressaoatmmar;
+    }
+
     public Double getDirecaovento() {
         return direcaovento;
     }
@@ -145,12 +211,60 @@ public class Clima implements Serializable {
         this.direcaovento = direcaovento;
     }
 
-    public Double getVelocidadeventonebulosidade() {
-        return velocidadeventonebulosidade;
+    public Double getVelocidadevento() {
+        return velocidadevento;
     }
 
-    public void setVelocidadeventonebulosidade(Double velocidadeventonebulosidade) {
-        this.velocidadeventonebulosidade = velocidadeventonebulosidade;
+    public void setVelocidadevento(Double velocidadevento) {
+        this.velocidadevento = velocidadevento;
+    }
+
+    public Double getInsolacao() {
+        return insolacao;
+    }
+
+    public void setInsolacao(Double insolacao) {
+        this.insolacao = insolacao;
+    }
+
+    public Double getNebulosidade() {
+        return nebulosidade;
+    }
+
+    public void setNebulosidade(Double nebulosidade) {
+        this.nebulosidade = nebulosidade;
+    }
+
+    public Double getEvaporacaopiche() {
+        return evaporacaopiche;
+    }
+
+    public void setEvaporacaopiche(Double evaporacaopiche) {
+        this.evaporacaopiche = evaporacaopiche;
+    }
+
+    public Double getTempcompmedia() {
+        return tempcompmedia;
+    }
+
+    public void setTempcompmedia(Double tempcompmedia) {
+        this.tempcompmedia = tempcompmedia;
+    }
+
+    public Double getUmidaderelativamedia() {
+        return umidaderelativamedia;
+    }
+
+    public void setUmidaderelativamedia(Double umidaderelativamedia) {
+        this.umidaderelativamedia = umidaderelativamedia;
+    }
+
+    public Double getVelocidadeventomedia() {
+        return velocidadeventomedia;
+    }
+
+    public void setVelocidadeventomedia(Double velocidadeventomedia) {
+        this.velocidadeventomedia = velocidadeventomedia;
     }
 
     @Override
@@ -177,5 +291,5 @@ public class Clima implements Serializable {
     public String toString() {
         return "br.gov.serpro.googlecep.entity.Clima[ id=" + id + " ]";
     }
-    
+
 }

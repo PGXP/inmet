@@ -1,10 +1,8 @@
 package br.gov.serpro.googlecep;
 
 import java.io.*;
-import java.net.*;
-import java.util.ArrayList;
+import java.nio.charset.Charset;
 import java.util.List;
-import java.util.Scanner;
 import org.apache.commons.io.FileUtils;
 
 public class WebCrawler {
@@ -47,6 +45,6 @@ public class WebCrawler {
 //    }
     @SuppressWarnings("empty-statement")
     public List<String> getSerieClima(String estacao) throws Exception {
-        return FileUtils.readLines(new File("/opt/dados/82590.txt"), "utf-8");
+        return FileUtils.readLines(new File("/opt/dados/82590.txt"), Charset.defaultCharset());
     }
 }
