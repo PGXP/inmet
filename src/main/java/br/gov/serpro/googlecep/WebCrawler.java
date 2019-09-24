@@ -45,6 +45,6 @@ public class WebCrawler {
 //    }
     @SuppressWarnings("empty-statement")
     public List<String> getSerieClima(String estacao) throws Exception {
-        return FileUtils.readLines(new File("/opt/dados/82590.txt"), Charset.defaultCharset());
+        return FileUtils.readLines(new File("/opt/dados/83096.txt"), Charset.defaultCharset());
     }
 }

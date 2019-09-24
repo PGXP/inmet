@@ -10,7 +10,7 @@
             <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://10.79.60.47:5432/geo"/>
             <property name="javax.persistence.jdbc.user" value="postgres"/>
             <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
-            <property name="javax.persistence.jdbc.password" value=""/>
+            <property name="javax.persistence.jdbc.password" value="KAAUV2TkMuPkKce7dsgAcZR66xmdHbx26AaV"/>
             <property name="hibernate.show_sql" value="false"/>
             <property name="hibernate.format_sql" value="false"/>
             <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>

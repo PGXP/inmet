@@ -289,7 +289,7 @@ public class Clima implements Serializable {
 
     @Override
     public String toString() {
-        return "br.gov.serpro.googlecep.entity.Clima[ id=" + id + " ]";
+        return "Clima{" + "id=" + id + ", estacao=" + estacao + ", dia=" + dia + ", hora=" + hora + ", precipitacao=" + precipitacao + ", tempbulboseco=" + tempbulboseco + ", tempbulboumido=" + tempbulboumido + ", tempmaxima=" + tempmaxima + ", tempminima=" + tempminima + ", umidaderelativa=" + umidaderelativa + ", pressaoatmestacao=" + pressaoatmestacao + ", pressaoatmmar=" + pressaoatmmar + ", direcaovento=" + direcaovento + ", velocidadevento=" + velocidadevento + ", insolacao=" + insolacao + ", nebulosidade=" + nebulosidade + ", evaporacaopiche=" + evaporacaopiche + ", tempcompmedia=" + tempcompmedia + ", umidaderelativamedia=" + umidaderelativamedia + ", velocidadeventomedia=" + velocidadeventomedia + '}';
     }
 
 }

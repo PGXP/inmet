@@ -10,10 +10,15 @@ import br.gov.serpro.googlecep.WebCrawler;
 
 import br.gov.serpro.googlecep.dao.ClimaJpaController;
 import br.gov.serpro.googlecep.dao.EstacoesJpaController;
+import br.gov.serpro.googlecep.entity.Clima;
 import br.gov.serpro.googlecep.entity.Estacoes;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import static java.time.Duration.between;
 import java.time.Instant;
 import static java.time.Instant.now;
+import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import static java.util.logging.Level.SEVERE;
@@ -40,6 +45,8 @@ public class ClimaRunner implements Runnable {
     public void run() {
         try {
             Instant start = now();
+            DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+
             //List<String> lista = gc.getSerieClima(estacao.getCodigo().toString());
             List<String> lista = gc.getSerieClima("");
 
@@ -49,9 +56,21 @@ public class ClimaRunner implements Runnable {
                 getLogger(ClimaRunner.class.getName()).log(SEVERE, "", e);
             }
 
-            lista.forEach((string) -> {
-                System.out.println(string);
-            });
+            for (int i = 49; i < lista.size() - 1; i++) {
+                String[] linha = lista.get(i).split(";");
+
+                Clima clima = new Clima();
+                clima.setEstacao(Integer.valueOf(linha[0]));
+                clima.setDia((Date) formatter.parse(linha[1]));
+                clima.setHora(linha[2]);
+                clima.setPrecipitacao(linha[3].isEmpty() ? null : Double.valueOf(linha[3]));
+                clima.setTempbulboseco(linha[4].isEmpty() ? null : Double.valueOf(linha[4]));
+                clima.setTempbulboumido(linha[5].isEmpty() ? null : Double.valueOf(linha[5]));
+                clima.setTempmaxima(linha[6].isEmpty() ? null : Double.valueOf(linha[6]));
+                clima.setTempminima(linha[7].isEmpty() ? null : Double.valueOf(linha[7]));
+                System.out.println(clima.toString());
+
+            }
 
             Instant finish = now();
             LOG.log(Level.INFO, "Work {0} -> {1}", new Object[]{between(start, finish).getNano(), lista.size()});
