@@ -36,19 +36,14 @@ public class Treinar {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("PU");
         ExecutorService executorGerador = newFixedThreadPool(MAX_THREADS);
         WebCrawler gc = new WebCrawler();
-        gc.login("", "");
 
         ClimaJpaController climadao = new ClimaJpaController(emf);
         EstacoesJpaController estacoesdao = new EstacoesJpaController(emf);
 
-//        ClimaRunner ir = new ClimaRunner();
-//        ir.setClimadao(null);
-//        ir.setEstacoesdao(null);
-//        ir.setGc(gc);
-//        ir.setEstacao(null);
-//        executorGerador.execute(ir);
         estacoesdao.findEstacoesEntities().forEach((estacao) -> {
             try {
+                gc.login("", "");
+                Thread.sleep(3333);
                 ClimaRunner ir = new ClimaRunner();
                 ir.setClimadao(climadao);
                 ir.setEstacoesdao(estacoesdao);
@@ -56,7 +51,6 @@ public class Treinar {
                 ir.setEstacao(estacao);
                 executorGerador.execute(ir);
 
-                Thread.sleep(999);
             } catch (InterruptedException ex) {
                 Logger.getLogger(Treinar.class.getName()).log(Level.SEVERE, null, ex);
             }

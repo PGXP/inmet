@@ -1,0 +1,68 @@
+<html><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<head>
+<title>Esta��o - 83599</title>
+   <!-- FACE BOX -->
+   <script src="facebox/js/jquery.js" type="text/javascript"></script>
+   <link href="facebox/styles/facebox.css" media="screen" rel="stylesheet" type="text/css" >
+
+   <script src="facebox/js/facebox.js" type="text/javascript"></script>
+   <script type="text/javascript">
+      jQuery(document).ready(function($) {
+         $('a[rel*=facebox]').facebox({
+            loading_image : 'loading.gif',
+            close_image   : 'closelabel.gif'})
+         $('area[rel*=facebox]').facebox({
+            loading_image : 'loading.gif',
+            close_image   : 'closelabel.gif'})
+      })
+   </script>
+   <script type="text/javascript">
+      function showFoto(src) {
+         //criando um link falso, para o LightBox captar as informa��es
+         var a_false = document.createElement("A");
+         a_false.rel = "lightbox";
+         a_false.href = src;
+         //chamando a fun��o do lightbox respons�vel pelo in�cio das a��es
+         myLightbox.start(a_false);
+         //anulando o link
+         a_false = null;
+      }
+   </script>
+</head>
+<pre>--------------------
+BDMEP - INMET
+--------------------
+Esta��o           : MOELA - SP (OMM: 83599)
+Latitude  (graus) : -24.05
+Longitude (graus) : -46.26
+Altitude  (metros): 100.00
+Esta��o Operante
+Inicio de opera��o: 01/10/1956
+Periodo solicitado dos dados: 01/01/1900 a 30/09/2019
+Os dados listados abaixo s�o os que encontram-se digitados no BDMEP
+Hora em UTC
+--------------------
+Obs.: Os dados aparecem separados por ; (ponto e v�rgula) no formato txt.
+      Para o formato planilha XLS, <A HREF="instrucao.html" TARGET="_top" rel="facebox">siga as instru��es</a>
+--------------------
+Estacao;Data;Hora;TempBulboSeco;TempBulboUmido;UmidadeRelativa;PressaoAtmEstacao;DirecaoVento;VelocidadeVentoNebulosidade;
+83599;02/01/2015;1200;30;25;67;;12;2.05776;8.75;
+83599;05/01/2015;1200;26.5;26.5;100;;0;0;10;
+83599;06/01/2015;1200;29;25;72;;0;0;3.75;
+83599;06/01/2015;1800;30;27;79;;28;2.5722;3.75;
+83599;07/01/2015;1800;32;27;68;;15;3.60108;2.5;
+83599;09/01/2015;1200;30;27;79;;21;2.05776;3.75;
+83599;10/01/2015;1200;30;28;86;;27;2.05776;1.25;
+83599;12/01/2015;1200;32;27;68;;12;2.05776;6.25;
+83599;13/01/2015;0000;30;27;79;;0;0;;
+83599;13/01/2015;1200;30;27;79;;17;2.5722;3.75;
+83599;14/01/2015;0000;30;27;79;;12;2.05776;;
+83599;14/01/2015;1200;25;24.5;97;;10;3.08664;7.5;
+83599;14/01/2015;1800;32;27;67;;10;3.08664;2.5;
+83599;15/01/2015;0000;29;27;85;;12;2.05776;;
+83599;20/01/2015;1200;30;27;79;;;3.60108;5;
+83599;05/08/2016;0000;25;22;77;;12;9.25992;;
+83599;18/01/2017;1200;31;;86;;36;2.05776;3.75;
+83599;18/06/2017;0000;24;;76;;15;;5;
+83599;16/07/2018;1200;28;21;54;;9;5.1444;2.5;
+</pre>

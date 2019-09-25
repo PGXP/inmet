@@ -1,0 +1,42 @@
+<html><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<head>
+<title>Esta��o - 83289</title>
+   <!-- FACE BOX -->
+   <script src="facebox/js/jquery.js" type="text/javascript"></script>
+   <link href="facebox/styles/facebox.css" media="screen" rel="stylesheet" type="text/css" >
+
+   <script src="facebox/js/facebox.js" type="text/javascript"></script>
+   <script type="text/javascript">
+      jQuery(document).ready(function($) {
+         $('a[rel*=facebox]').facebox({
+            loading_image : 'loading.gif',
+            close_image   : 'closelabel.gif'})
+         $('area[rel*=facebox]').facebox({
+            loading_image : 'loading.gif',
+            close_image   : 'closelabel.gif'})
+      })
+   </script>
+   <script type="text/javascript">
+      function showFoto(src) {
+         //criando um link falso, para o LightBox captar as informa��es
+         var a_false = document.createElement("A");
+         a_false.rel = "lightbox";
+         a_false.href = src;
+         //chamando a fun��o do lightbox respons�vel pelo in�cio das a��es
+         myLightbox.start(a_false);
+         //anulando o link
+         a_false = null;
+      }
+   </script>
+</head>
+<pre>N�o existem dados disponiveis da esta��o: B  J  DA LAPA - AEROPORTO - BA  para o periodo de 01/01/1900 a 30/09/2019 
+
+Esclarecemos que os dados dos �LTIMOS 90 DIAS ainda N�O est�o dispon�veis no BDMEP e que podem ser encontrados 
+ no seguinte link:
+http://www.inmet.gov.br/portal/index.php?r=estacoes/estacoesConvencionais 
+
+As informa��es est�o em hor�rio UTC; Para o hor�rio oficial de Bras�lia, basta subtrair 3 horas. 
+
+Est�o dispon�veis SOMENTE dados a partir de 1961. 
+Para maiores informa��es dirija-se ao Fale Conosco - INMET 
+e-mail:  faleconosco.df@inmet.gov.br 

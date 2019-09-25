@@ -58,7 +58,7 @@ public class WebCrawler {
 
     public List<String> getSerieClima(String estacao) throws Exception {
 
-        String hostSent = "http://www.inmet.gov.br/projetos/rede/pesquisa/gera_serie_txt.php?&mRelEstacao=" + estacao + "&btnProcesso=serie&mRelDtInicio=01/01/1900&mRelDtFim=30/09/2019&mAtributos=1,1,,,1,1,,1,1,,,1,,,,,";
+        String hostSent = "http://www.inmet.gov.br/projetos/rede/pesquisa/gera_serie_txt.php?&mRelEstacao=" + estacao + "&btnProcesso=serie&mRelDtInicio=01/01/1900&mRelDtFim=31/12/2019&mAtributos=1,1,,,1,1,,1,1,,,1,,,,,";
 // 82294
 
         URL url = new URL(hostSent);
@@ -87,8 +87,13 @@ public class WebCrawler {
                 }
             }
         }
-
         connection.disconnect();
+
+        FileWriter writer = new FileWriter("/opt/inmet/" + estacao + ".txt");
+        for (String str : response) {
+            writer.write(str + System.lineSeparator());
+        }
+        writer.close();
 
         return response;
     }

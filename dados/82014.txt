@@ -1,0 +1,52 @@
+<html><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<head>
+<title>Esta��o - 82014</title>
+   <!-- FACE BOX -->
+   <script src="facebox/js/jquery.js" type="text/javascript"></script>
+   <link href="facebox/styles/facebox.css" media="screen" rel="stylesheet" type="text/css" >
+
+   <script src="facebox/js/facebox.js" type="text/javascript"></script>
+   <script type="text/javascript">
+      jQuery(document).ready(function($) {
+         $('a[rel*=facebox]').facebox({
+            loading_image : 'loading.gif',
+            close_image   : 'closelabel.gif'})
+         $('area[rel*=facebox]').facebox({
+            loading_image : 'loading.gif',
+            close_image   : 'closelabel.gif'})
+      })
+   </script>
+   <script type="text/javascript">
+      function showFoto(src) {
+         //criando um link falso, para o LightBox captar as informa��es
+         var a_false = document.createElement("A");
+         a_false.rel = "lightbox";
+         a_false.href = src;
+         //chamando a fun��o do lightbox respons�vel pelo in�cio das a��es
+         myLightbox.start(a_false);
+         //anulando o link
+         a_false = null;
+      }
+   </script>
+</head>
+<pre>--------------------
+BDMEP - INMET
+--------------------
+Esta��o           : NORMANDIA - RR (OMM: 82014)
+Latitude  (graus) : 3.5
+Longitude (graus) : -60.16
+Altitude  (metros): 700.00
+Esta��o Desativada
+Inicio de opera��o: 01/04/1914
+Periodo solicitado dos dados: 01/01/1900 a 30/09/2019
+Os dados listados abaixo s�o os que encontram-se digitados no BDMEP
+Hora em UTC
+--------------------
+Obs.: Os dados aparecem separados por ; (ponto e v�rgula) no formato txt.
+      Para o formato planilha XLS, <A HREF="instrucao.html" TARGET="_top" rel="facebox">siga as instru��es</a>
+--------------------
+Estacao;Data;Hora;TempBulboSeco;TempBulboUmido;UmidadeRelativa;PressaoAtmEstacao;DirecaoVento;VelocidadeVentoNebulosidade;
+82014;14/04/2011;1200;22.6;;91;951.2;14;3.5;10;
+82014;14/04/2011;1800;28.5;;71;948.5;14;4.6;9;
+82014;15/04/2011;0000;22.1;;93;951.7;9;1.8;9;
+</pre>

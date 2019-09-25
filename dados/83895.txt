@@ -1,0 +1,69 @@
+<html><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<head>
+<title>Esta��o - 83895</title>
+   <!-- FACE BOX -->
+   <script src="facebox/js/jquery.js" type="text/javascript"></script>
+   <link href="facebox/styles/facebox.css" media="screen" rel="stylesheet" type="text/css" >
+
+   <script src="facebox/js/facebox.js" type="text/javascript"></script>
+   <script type="text/javascript">
+      jQuery(document).ready(function($) {
+         $('a[rel*=facebox]').facebox({
+            loading_image : 'loading.gif',
+            close_image   : 'closelabel.gif'})
+         $('area[rel*=facebox]').facebox({
+            loading_image : 'loading.gif',
+            close_image   : 'closelabel.gif'})
+      })
+   </script>
+   <script type="text/javascript">
+      function showFoto(src) {
+         //criando um link falso, para o LightBox captar as informa��es
+         var a_false = document.createElement("A");
+         a_false.rel = "lightbox";
+         a_false.href = src;
+         //chamando a fun��o do lightbox respons�vel pelo in�cio das a��es
+         myLightbox.start(a_false);
+         //anulando o link
+         a_false = null;
+      }
+   </script>
+</head>
+<pre>--------------------
+BDMEP - INMET
+--------------------
+Esta��o           : ARVOREDO - SC (OMM: 83895)
+Latitude  (graus) : -27.3
+Longitude (graus) : -48.35
+Altitude  (metros): 75.00
+Esta��o Desativada
+Inicio de opera��o: 01/11/1956
+Periodo solicitado dos dados: 01/01/1900 a 30/09/2019
+Os dados listados abaixo s�o os que encontram-se digitados no BDMEP
+Hora em UTC
+--------------------
+Obs.: Os dados aparecem separados por ; (ponto e v�rgula) no formato txt.
+      Para o formato planilha XLS, <A HREF="instrucao.html" TARGET="_top" rel="facebox">siga as instru��es</a>
+--------------------
+Estacao;Data;Hora;TempBulboSeco;TempBulboUmido;UmidadeRelativa;PressaoAtmEstacao;DirecaoVento;VelocidadeVentoNebulosidade;
+83895;09/01/2015;0000;24.8;23.6;90;;34;5.65884;;
+83895;29/04/2015;0600;21.6;19.6;84;;16;;;
+83895;27/07/2015;1200;17.4;16;87;;26;1.54332;8.75;
+83895;31/07/2015;1800;19.8;18.4;88;;4;;0;
+83895;25/09/2016;1800;24;18;56;;2;2.5722;10;
+83895;04/02/2017;1800;30;;93;;12;6.17328;2.5;
+83895;08/02/2017;1800;25;23;84;;10;3.60108;10;
+83895;16/02/2017;1200;30;26;73;;12;6.17328;5;
+83895;22/02/2017;0600;25;23;84;;11;7.20216;;
+83895;27/02/2017;0600;27;25;85;;9;9.25992;;
+83895;05/03/2017;0600;27;25;85;;10;9.25992;;
+83895;26/04/2017;1800;30;25;67;;10;10.2888;2.5;
+83895;10/05/2017;0000;27;25;85;;13;6.68772;;
+83895;14/05/2017;1800;;26;79;;10;10.2888;2.5;
+83895;15/05/2017;0000;28;26;85;;10;8.23104;;
+83895;18/05/2017;1800;19;18;91;;8;10.2888;10;
+83895;24/05/2017;1200;;26;73;;11;9.25992;3.75;
+83895;02/06/2017;1800;;;73;;10;7.20216;3.75;
+83895;17/06/2017;1200;28;24;72;;14;8.23104;3.75;
+83895;09/09/2017;0000;25;22;77;;11;7.20216;;
+</pre>
